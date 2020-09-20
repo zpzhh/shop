@@ -1,0 +1,10 @@
+{
+    "presets":[["env",{"modules":false}]],
+    "plugins":[
+        "transform-runtime",
+        ["component",{
+            "libraryName":"element-ui",
+            "styleLibraryName":"theme-chalk"
+        }]
+    ]
+}

@@ -1,0 +1,16 @@
+div.container{
+   display:flex;
+   justify-content: center;
+   width:600px;
+   height:500px;
+    div.slider{
+        width:20%;
+        height:100%;
+        background:blue;
+    };
+    div.content{
+        width:200px;
+        height:100%;
+        background:green;
+    }
+} 
