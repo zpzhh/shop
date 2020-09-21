@@ -1,7 +1,10 @@
 <template>
     <div class="box">
        <ul class="sideBar" @click="toggle">
-           <li v-for="item in lists" :key="item.label" >
+           <li v-for="item in lists" :key="item.label" 
+            :data-label="item.label"
+             :class="{foucs:item.label==curLabel}"
+            >
                {{item.title}}
            </li>
        </ul>
@@ -22,6 +25,8 @@
           toggle(e){
               let tag=e.target.tagName.toLowerCase();
               if(tag=="li"){
+                  let label=e.srcElement.dataset.label;
+                   this.curLabel=label;
                   this.lists.forEach(element => {
                        if(element.title==$.trim(e.target.textContent)){
                            this.curComponent=element.label;
@@ -36,7 +41,8 @@
               lists:[{title:'关于我们',label:'aboutUs'},{title:'联系我们',label:"contactUs"}
             ,{title:'新闻公告',label:'news'},{title:'配送安全',label:'dstInstalation'}
         ,{title:'退换货政策',label:"returnPolicy"},{title:'维修与保养',label:'maintenance'}],
-        curComponent:"aboutUs"
+        curComponent:"aboutUs",
+        curLabel:'aboutUs',
             }
         }
     }
@@ -53,6 +59,9 @@
         li:hover{
             color:#ff651c;
             cursor:pointer;
+        }
+        .foucs{
+            color:#ff651c;
         }
     }
     div.box{
