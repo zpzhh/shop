@@ -9,11 +9,17 @@ const base=require("./webpack.base.config");
 const isProd=process.env.NODE_ENV=="production";
 
 const config=merge(base,{
+    
     entry:{
         main:path.join(__dirname,'./index.js'),
         jquery:["jquery"],
         vue:["vue"],
     }, 
+    resolve:{
+       alias:{
+           vue:"vue/dist/vue.js",
+       }
+    },
     devServer:isProd?{}:{
         contentBase:false,
         historyApiFallback:false,

@@ -16,14 +16,45 @@
 <script>
     import aboutUs from "../../layouts/aboutUs.vue";
     import $ from 'jquery';
+
+
+     const contactUs={
+         name:'contactUs',
+         template:"<div><h1 class='little_color'>联系我们</h1></div>"
+     }
+     const news={
+         name:'news',
+         template:"<div><h1 class='little_color'>新闻公告</h1></div>"
+     }
+     const dstInstallation={
+         name:'dstInstallation',
+         template:"<div><h1 class='little_color'>配送安全</h1></div>"
+     }
+
+     const returnPolicy={
+         name:'returnPolicy',
+         template:"<div><h1>退换货政策</h1></div>"
+     }
+
+     const maintenance={
+         name:'maintenance',
+         template:"<div><h1>维修与保养</h1></div>"
+     }
+
     export default{
         name:'contactus',
         components:{
           aboutUs,
+          contactUs,
+          news,
+          dstInstallation,
+          returnPolicy,
+           maintenance
         },
         mounted(){
          this.$EventBus.on('sideState',(state)=>{
               this.curLabel=state;
+              this.curComponent=state;
          })
         },
         methods:{

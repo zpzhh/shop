@@ -34,7 +34,7 @@
   }
   div.main{
     min-height:100vh;
-    width:102%;
+    width:100vw;
   }
   div.bottom{
     position:fixed;

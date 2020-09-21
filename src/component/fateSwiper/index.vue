@@ -93,12 +93,18 @@
   }
   div.wrapper /deep/div.swiper-slide>video{
         width:100% !important;
-        height:100% !important;
+        height:92% !important;
+        margin:0 0;
+
+}
+div.wrapper /deep/div.swiper-container{
+        width:100% !important;
+        height:100vh !important;
+        background-color: #000;
         padding:0 0;
         margin:0 0;
 
 }
-
   div.wrapper /deep/span.swiper-pagination-bullet{
        height:16px;
        width:16px;
@@ -110,6 +116,7 @@
   div.wrapper{
        width:100%;
        height:100%;
+       margin-top:0px;
        overflow: hidden;
   }
   div.insertForIndex{
