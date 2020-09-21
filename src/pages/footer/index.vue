@@ -1,7 +1,9 @@
 <template>
-      <div class="_box">
+      <div class="_box" @click="emitState">
            <span v-for="[key,value] in infos" :key="key">
-                 <router-link :to='key' class="font">{{value}}</router-link>
+                 <router-link to='contactUs' class="font"
+                   :data-state="key"
+                 >{{value}}</router-link>
            </span>
       </div>
 </template>>
@@ -13,6 +15,14 @@
                 infos:[["aboutUs","关于我们"],["contactUs","联系我们"],
              ["news","新闻公告"],["dstInstallation","配送安装"],["returnPolicy","退换货政策"],
              ["maintenance","维修与保养"]]
+             }
+         },
+         methods:{
+             emitState(e){
+               let tag=e.target.tagName.toLowerCase();
+               if(tag=="a"){
+                  this.$EventBus.emit("sideState",e.srcElement.dataset.state);
+               }
              }
          }
      }

@@ -21,6 +21,11 @@
         components:{
           aboutUs,
         },
+        mounted(){
+         this.$EventBus.on('sideState',(state)=>{
+              this.curLabel=state;
+         })
+        },
         methods:{
           toggle(e){
               let tag=e.target.tagName.toLowerCase();
@@ -39,7 +44,7 @@
         data(){
             return{
               lists:[{title:'关于我们',label:'aboutUs'},{title:'联系我们',label:"contactUs"}
-            ,{title:'新闻公告',label:'news'},{title:'配送安全',label:'dstInstalation'}
+            ,{title:'新闻公告',label:'news'},{title:'配送安全',label:'dstInstallation'}
         ,{title:'退换货政策',label:"returnPolicy"},{title:'维修与保养',label:'maintenance'}],
         curComponent:"aboutUs",
         curLabel:'aboutUs',
