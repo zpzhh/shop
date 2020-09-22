@@ -80,7 +80,7 @@
 </script>
 <style lang="scss" scoped>
   div.wrapper /deep/div.swiper-position{
-       top:200px;
+       top:250px;
        right:40px;
   }
   div.wrapper /deep/div.swiper-slide>{
@@ -106,11 +106,15 @@ div.wrapper /deep/div.swiper-container{
 
 }
   div.wrapper /deep/span.swiper-pagination-bullet{
-       height:16px;
-       width:16px;
-       border:1.5px solid #ff651c;
+       height:13px;
+       width:13px;
+       border:1px solid #ff651c;
        margin:15px 0px !important;
-       background-color: #ff651c;
+       
+  }
+  div.wrapper /deep/span.swiper-pagination-bullet-active{
+      background-color: #ff651c;
+       
   }
  
   div.wrapper{
