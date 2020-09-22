@@ -56,6 +56,7 @@
     }
 </script>
 <style lang="scss" scoped >
+  
   div.itemList_outer_box{
       height:100%;
       width:100%;
@@ -70,7 +71,7 @@
          div.pagination{
             margin-top:82px;
             margin-left:76%;
-         }
+            }
        }
        main{
            ul.list_main{
@@ -84,9 +85,7 @@
                list-style:none;
                li{
                    width:24%;
-                   border:1px solid #fff;
                    height:148px;
-                   background-color: transparent;
                    border:#8e8e8e solid 2px;
                    margin:0 0 15px 3px;
                    padding-bottom:10px;

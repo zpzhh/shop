@@ -1,6 +1,7 @@
 <template>
    <div class="box">
        <div class="list"  @click="focus">
+           <p class="title">分类 Category</p>
            <ul v-for="(items,idx1) in tabItems">
                  <li v-for="(item,idx2) in items" >
                     <router-link :to="item.path"  :data-position="`${idx1}-${idx2}`" :class="[link,navVal==item.value&&col==idx1?orange:white]" v-if="item.value.length==2">
@@ -84,19 +85,36 @@
              height:100%;
              width:100%;
              margin:0px 0px;
-             background:rgb(77, 65, 65);
+             margin-top:60px;
              div.list{
                  margin-top:0px;
                  width:150px;
                  min-height:200px;
                  background:url("../../../public/images/list_bg.jpg")  no-repeat;
                  margin-right:10px;
+                 p.title{
+                     color:#fff;
+                     font-size: 18px;
+                     margin-left:0px;
+                     padding-left:16px;
+                     margin-bottom:35px;
+                 }
                  ul{
                       list-style:none;
                       padding-left:15px;
                       padding-bottom:5px;
                       position:relative;
+                      li:nth-child(1)::before{
+                        content:">";
+                        visibility:visible;
+                        display:block;
+                        position:absolute;
+                        left:-12px;
+                        color: #ff651c;
+                     }
+        
                       li{
+                          position:relative;
                           white-space: nowrap;
                           color:#fff;
                           line-height:23px;
@@ -117,19 +135,13 @@
                            .link:hover{
                               color: #ff641c;
                            }
-                          
                          .orange{
                              color:#ff641c
                          }
                          .white{
                              color:#fff;
                          }
-                     li:nth-child(1):before{
-                       content:">";
-                       left:0px;
-                       color:#fff;
-                       position: absolute;;
-                     }
+                 
                  }
                  ul:last-child{
                      padding-bottom: 75px;
@@ -141,7 +153,6 @@
                  align-items: center;
                  width:750px;
                  height:1000px;
-                 background:#fff;
              }
          }
 </style>

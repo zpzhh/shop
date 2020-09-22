@@ -5,6 +5,7 @@ const HardSource=require("hard-source-webpack-plugin");
 const merge=require("webpack-merge");
 const webpack=require("webpack");
 const base=require("./webpack.base.config");
+const { dirname } = require('path');
 
 const isProd=process.env.NODE_ENV=="production";
 
@@ -16,8 +17,10 @@ const config=merge(base,{
         vue:["vue"],
     }, 
     resolve:{
+        extensions:[".js",".vue",".jsx",".json"],
        alias:{
            vue:"vue/dist/vue.js",
+           '@':path.join(__dirname,'./public'),
        }
     },
     devServer:isProd?{}:{

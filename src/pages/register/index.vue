@@ -18,8 +18,7 @@
                 <el-input v-model="userInfos.passwordConfirm"  class="bgNone"></el-input>
             </el-form-item>
             <el-form-item label="验证码">
-                <el-input v-model="userInfos.validateCode"
-                class="validateCode"></el-input>
+                <Verify ref="Verify"  :type="type" :arith="num" @success="success"></Verify>
             </el-form-item>
             <el-form-item>
                 <el-checkbox>
@@ -34,8 +33,13 @@
     </div>
 </template>
 <script>
+   import Verify from "../../component/verify/Verify";
+     
     export default{
         name:'Register',
+        components:{
+            Verify,
+        },
         data(){
             return{
                 userInfos:{
@@ -45,14 +49,21 @@
                     passwordConfirm:'',
                     validateCode:''
                 },
-                protocal:"<<yvvy用户注册协议>>"
+                num:0,
+                label:true,
+                type:1,
+                protocal:"<<yvvy用户注册协议>>",
+                verifyInstance:null,
             }
         },
         methods:{
             register(){
-              
+               this.$refs.Verify.checkCode();
+            },
+            success(obj){
+             console.log(obj);
             }
-        }
+        },
     }
 </script>
 <style lang="scss" scoped>
@@ -60,15 +71,19 @@
           display:flex;
           justify-content: center;
           align-items: center;
+          width:100vw;
+          height:100vh;
      }
+
      button.registerBtn{
            width:250px;
        }
 </style>
 <style>
        @import "../../../global.scss";
-       .validateCode input.el-input__inner{
-           width:125px;
+    
+       div.validateCode{
+          width:125px !important;
        }
        p.title{
            font-size: 14px;
