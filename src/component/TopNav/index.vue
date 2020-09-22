@@ -14,16 +14,19 @@
                 </li>
                 <span id="line"></span>
             </ul>
+            <div class="us_box">
             <div class='search'>
               <el-input v-model="waitForSearch"  size="medium" auto-complete="on"
               placeholder="检索商品" prefix-icon="el-icon-search" class="inputBgNone"> 
-          </el-input>
+               </el-input>
             </div>
              <div class="userInto">
                 <router-link  to="/login" class="font">登录</router-link>
                   <span class="middleLine"></span>
                 <router-link to="/register" class='font' >注册</router-link>
              </div>
+        </div>
+    </div>
              <div id="bottom_box" @mouseover="visibleAgain"
              @mouseleave="letBottomHidden"
            >
@@ -36,7 +39,6 @@
              </div>
            </div>
         </div>
-    </div>
 </template>
 <script>
      import logo from "../../../public/images/logo.png";
@@ -51,6 +53,7 @@
             this.$logoWidth=$("div.logo").width();
             this.$iC=$("div.innerContainer");
             let arr=[]
+            console.log(this.$logoWidth)
             $("ul.nav_menu>li:not('#line')").each(function(idx,ele){
                 arr[arr.length]=ele.getBoundingClientRect().width;
             })
@@ -191,6 +194,23 @@
 </script>
 <style lang='scss'  type='text/css' scoped>
     @import "index.scss";
+    div.us_box{
+      display:flex;
+      align-items:center;
+    }
+    @media screen and (max-width: 1050px){
+      div.us_box{
+        position: absolute;
+        top:95px;
+        right:0px;
+      }
+      div.search{
+        margin-left: 0px !important;
+      }
+      div.userInto{
+        width:100px !important;
+      }
+    }
    
        .font{
        color:#fff;

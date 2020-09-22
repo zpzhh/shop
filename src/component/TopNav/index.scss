@@ -7,7 +7,8 @@ div.outer_bg{
     width:100%;
    div.bg{
       display:flex;
-      justify-content: space-between;
+      position:relative;
+      justify-content:flex-start;
       height:$h;
       width:100%;
       background:rgba(0,0,0,0.7);
@@ -48,30 +49,29 @@ div.outer_bg{
        }
     }
     div.search{
-       margin-left:165px;
+       margin-left:130px;
        width:170px;
        height:$h;
        display:flex;
        align-items:center;
     }
-
-    #bottom_box{
-      position: absolute;
-      top:74px;
-      z-index:1;
-     height:$lh;
-     width:100%;
-    background:rgba(22,22,22,0.6);
-    visibility: hidden;
-     div.innerContainer{
-        position: relative;
-        display:inline-block;
-        height:$lh;
-        line-height:$lh;
-     }
- }
 }
  
+#bottom_box{
+   position: absolute;
+   top:74px;
+   z-index:1;
+  height:$lh;
+  width:100%;
+ background:rgba(22,22,22,0.6);
+ visibility: hidden;
+  div.innerContainer{
+     position: relative;
+     display:inline-block;
+     height:$lh;
+     line-height:$lh;
+  }
+}
 
  }
 

@@ -53,6 +53,7 @@
         methods:{
             change(val){
                this.curList=this.list.slice((val-1)*this.pagination.pageSize,val*this.pagination.pageSize);
+            document.querySelector("div.itemList_outer_box").scrollIntoView(true,{behavior:"smooth"});
             }
         }
     }
