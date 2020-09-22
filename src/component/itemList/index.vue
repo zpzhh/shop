@@ -44,6 +44,8 @@
                    pageSize:12,
                    pagerCount:11,
                },
+               prev:"上一页",
+               next:'下一页',
                curList:[],
                total:0,
             }
@@ -71,7 +73,15 @@
          div.pagination{
             margin-top:82px;
             margin-left:76%;
+            &/deep/ ul.el-pager{
+                background-color: rgb(20,20,20);
+               
             }
+            & /deep/ div.el-pagination>button{
+                background-color: rgb(20,20,20)!important;
+            }
+            }
+
        }
        main{
            ul.list_main{
@@ -93,4 +103,32 @@
            }
        }
   }
+</style>
+<style>
+    div.pagination>div.el-pagination{
+        background-color: rgb(20,20,20)!important;
+    }
+  div.el-pagination>button.btn-prev  div.el-pagination>button.btn-next{
+      background-color: rgb(20,20,20) !important;
+  }
+  button.btn-prev>i.el-icon-arrow-left::before{
+    content:'上一页' !important;
+    color:#f03807;
+  }
+
+  button.btn-next>i.el-icon-arrow-right::before{
+    content:'下一页' !important;
+    color:#f03807;
+  }
+    ul.el-pager>li.number{
+        background-color: rgb(20,20,20) !important;
+        color:#f03807;
+    }
+    ul.el-pager>li.number:hover{
+        color:#ff651c;
+    }
+
+     ul.el-pager>li.active{
+             color:#fff;
+         }
 </style>
