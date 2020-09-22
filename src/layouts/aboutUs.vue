@@ -36,9 +36,10 @@
        li{
            width:45%;
            height:250px;
-           padding:0 15px;
+           padding:25px 15px;
+           margin-right:5px;
            color:#fff;
-           border:1.5px solid #000;
+           border:1px solid #000;
            p{
                margin-top: 0px;
                padding-top: 0px;

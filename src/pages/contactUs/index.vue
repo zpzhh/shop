@@ -87,7 +87,7 @@
     ul.sideBar{
         list-style: none;
         text-align: center;
-        width:20%;
+        width:25%;
         li{
             color:#fff;
             padding-bottom:20px;
@@ -105,6 +105,11 @@
         justify-content: flex-start;
         padding-top:120px;
         min-height:100vh;
-        background-color: #000;
+        width:100vw;
     }
+    div.display{
+        width:70%;
+        overflow: hidden;
+    }
+   
 </style>
