@@ -23,6 +23,7 @@ Vue.use(Radio);
 
 
 let router=new vueRouter({
+    mode:'hash',
    routes,
 });
 new Vue({

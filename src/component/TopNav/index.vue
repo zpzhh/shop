@@ -63,7 +63,7 @@
         data(){
             return {
             tabList:[['homePage','首页',"/"],['lifeStyle','生活方式',"/lifeStyle"],['chaoKuFurniture','潮酷家具',"/category/chaoKuFurniture"],
-            ['hardDecoration','硬装饰品',"/category/hardDecoration"],['softDecoration','软装饰品',"/category/softDecoration"],['houseWear',"家居用品","/category/homeWear"],['brandInstruction',"品牌介绍","/brandInstruction"]
+            ['hardDecoration','硬装饰品',"/category/hardDecoration"],['softDecoration','软装饰品',"/category/softDecoration"],['homeWear',"家居用品","/category/homeWear"],['brandInstruction',"品牌介绍","/brandInstruction"]
        ,["contactUs","联系我们","/contactUs"],['activityZone',"活动专场","/activityZone"],['onlineMall',"在线商城","/onlineMall"]],
           currentItem:[],
           currIndex:'',
@@ -74,7 +74,7 @@
               chaoKuFurniture:["实木","沙发","装饰家具"],
               hardDecoration:["桌面摆饰","灯饰","装饰植物","装饰画","墙面挂件","装饰镜"],
               softDecoration:["地毯","装饰枕","桌面摆饰"],
-              houseWear:["餐饮用具","生活配饰"],
+              homeWear:["餐饮用具","生活配饰"],
               brandInstruction:[],
               activityZone:[],
               onlineMall:[]

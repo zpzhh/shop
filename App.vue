@@ -13,13 +13,15 @@
   import topNav from "./src/component/TopNav/index.vue";
   import home from "./src/pages/home/index.vue";
   import Bottom from "./src/pages/footer/index.vue";
+  import {filterUrlHash}from './public/utils/util';
    export default  {
       name:"App",
       components:{
         topNav,
         home,
         Bottom,
-      }
+      },
+     
    }
 </script>
 

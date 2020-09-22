@@ -67,11 +67,11 @@
        }
         this.$EventBus.on("curItem",(text)=>{   
               this.navVal=$.trim(text);
-              console.log(ref[text]);
               this.col=ref[text];
          })
          this.$EventBus.on("topToside",(text)=>{
               this.col=text;
+              /*text的类型与tabItems的属性类型对应*/
             this.$EventBus.emit("jump",this.match(this.tabItems,text));
          })
      }
