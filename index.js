@@ -6,9 +6,11 @@ import vueRouter from "vue-router";
 import App from "./App.vue";
 import "element-ui/lib/theme-chalk/index.css";
 import routes from "./routes.js";
+import {requestData} from "./public/utils/axios";
 import {EventBus} from "./public/utils/eventBus.js"
 Vue.prototype.$ELEMENT={size:"small",zIndex:3000};
 Vue.prototype.$EventBus=EventBus();
+Vue.prototype.$axios=requestData;
 Vue.use(vueRouter);
 Vue.use(Form);
 Vue.use(FormItem);

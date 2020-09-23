@@ -21,6 +21,9 @@ module.exports={
 
         }
     },
+    externals:{
+
+    },
     module:{
         rules:[
             {
@@ -98,6 +101,9 @@ module.exports={
         hints:false,
     },
     plugins:isProd?[
+        new webpack.DefinePlugin({
+            $:"jquery",
+        }),
         new HtmlWebpackPlugin({
             template:path.join(__dirname,"./index.html"),
             filename:'index.html'
@@ -127,6 +133,8 @@ module.exports={
         new webpack.optimize.ModuleConcatenationPlugin(),
     ]:[
         new FriendlyErrorsPlugin(),
+        new webpack.DefinePlugin({
+        }),
         new HtmlWebpackPlugin({
             template:path.join(__dirname,"./index.html"),
             filename:'index.html'
