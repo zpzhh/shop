@@ -81,17 +81,19 @@
          div.box{
              display:flex;
              justify-content: flex-start;
-             padding:75px 80px;
-             height:100%;
-             width:100%;
-             margin:0px 0px;
-             margin-top:60px;
+              padding-top:75px;
+              padding-left:14%;
+              padding-right:26%;
+              padding-bottom:80px;
+              box-sizing:border-box;
+               height:100%;
+               width:100%;
              div.list{
                  margin-top:0px;
-                 width:150px;
+                 min-width:150px;
                  min-height:200px;
-                 background:url("../../../public/images/list_bg.jpg")  no-repeat;
-                 margin-right:10px;
+                 background:url("../../../public/images/list_bg.jpg")  no-repeat  contain;
+                 margin-right:3%;
                  p.title{
                      color:#fff;
                      font-size: 18px;
@@ -151,7 +153,7 @@
              div.display{
                  display:flex;
                  align-items: center;
-                 width:750px;
+                 min-width:850px;
                  min-height:100vh;
              }
          }

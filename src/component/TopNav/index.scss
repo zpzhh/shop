@@ -15,6 +15,7 @@ div.outer_bg{
     ul{
        list-style:none;
        position:relative;
+       flex:1,5,5;
        margin:0px 0px;
        padding:0px 0px;
        align-items: center;
@@ -37,6 +38,7 @@ div.outer_bg{
     div.logo{
        height:100%;
       position:relative;
+      flex:1,2,2;
       margin-right:25px;
       margin-left:25px;
       display: flex;
@@ -52,6 +54,7 @@ div.outer_bg{
        margin-left:130px;
        width:170px;
        height:$h;
+       flex-grow:1,3,3;
        display:flex;
        align-items:center;
     }

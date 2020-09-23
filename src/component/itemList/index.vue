@@ -53,7 +53,7 @@
         methods:{
             change(val){
                this.curList=this.list.slice((val-1)*this.pagination.pageSize,val*this.pagination.pageSize);
-            document.querySelector("div.itemList_outer_box").scrollIntoView(true,{behavior:"smooth"});
+            // document.querySelector("div.itemList_outer_box").scrollIntoView(true,{behavior:"smooth"});
             }
         }
     }
@@ -63,6 +63,7 @@
   div.itemList_outer_box{
       height:100%;
       width:100%;
+      margin-bottom: 150px;
       position:relative;
       header{
           img{
@@ -72,8 +73,9 @@
       }
        footer{
          div.pagination{
-            margin-top:82px;
-            margin-left:53%;
+                position:absolute;
+                right:0px;
+                bottom:0px;
             &/deep/ ul.el-pager{
                 background-color: rgb(20,20,20);
                
