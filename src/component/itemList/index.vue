@@ -73,7 +73,7 @@
        footer{
          div.pagination{
             margin-top:82px;
-            margin-left:76%;
+            margin-left:53%;
             &/deep/ ul.el-pager{
                 background-color: rgb(20,20,20);
                

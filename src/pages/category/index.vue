@@ -152,7 +152,7 @@
                  display:flex;
                  align-items: center;
                  width:750px;
-                 height:1000px;
+                 min-height:100vh;
              }
          }
 </style>

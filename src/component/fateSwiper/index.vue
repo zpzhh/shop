@@ -47,22 +47,38 @@
                     speed:1000,
                     direction:'vertical',
                 },
+                show:true,
+                even:false,
+                odd:false,
+                O:false,
+                floats:[require("../../../public/images/float.png"),
+                        require("../../../public/images/float1.png"),
+                        ]
             }
         },
         directives:{
           swiper:directive
         },
         methods:{
+        
            slideChange(){
-              let div= document.createElement("div");
-               div.className="insertForIndex";
+               
                let idx=this.$refs.mySwiper.swiper.activeIndex;
-                console.log(idx);
-               if(!$(`div.swiper-wrapper>div.swiper-slide:eq(${idx})>div.insertForIndex`).length){
-                $(`div.swiper-wrapper>div.swiper-slide:eq(${idx})`)
-              .append(div);
+
+             /*##############*/
+             idx%2==0?(this.even=true,this.odd=false):(this.even=false,this.odd=true);
+                if(this.even){
+                    this.$div_trs.innerHTML=`<img src=${this.floats[0]} alt=''/>`
+                    $("div.swiper-container>div").remove('.transition_area');
+                    this.$SC.append(this.$div_trs);
+                   $(this.$div_trs).css({left:"100%",top:160}).animate({left:0},1000*1.5);
                }
-            
+               if(this.odd){
+                this.$div_trs.innerHTML=`<img src=${this.floats[1]} alt=''/>`;
+                $("div.swiper-container>div").remove('.transition_area');
+                this.$SC.append(this.$div_trs);
+                $(this.$div_trs).css({top:-280,left:0}).animate({top:160},1000*1.5);
+               }
            },
           
         },
@@ -72,13 +88,35 @@
             }
         },
         mounted(){
-            
-    
-        }
-       
+         let div_trs= document.createElement('div');
+            div_trs.className="transition_area";
+            this.$SC=$("div.swiper-container");
+            this.$div_trs=div_trs;
     }
+}
 </script>
 <style lang="scss" scoped>
+
+    .slide-enter-active, .slide-leave-active{
+        animation: debounces 5s ease;
+    }
+    
+   
+
+    @keyframes debounces {
+        0%{
+            transform:translateY(0px);
+        }50%{
+            transform:translateY(300px);
+        }100%{
+            transform:translateY(0px);
+        }
+    }
+    
+ 
+     
+
+
   div.wrapper /deep/div.swiper-position{
        top:250px;
        right:40px;
@@ -121,6 +159,7 @@ div.wrapper /deep/div.swiper-container{
        width:100%;
        height:100%;
        margin-top:0px;
+       position:relative;
        overflow: hidden;
   }
   div.insertForIndex{
@@ -144,4 +183,18 @@ div.wrapper /deep/div.swiper-container{
             transform: translateY(200px);
         }
    }
+</style>
+<style lang="scss">
+    div.transition_area{
+        position:absolute;
+        height:200px;
+        width:100vw;
+        top:-250px;
+        overflow: hidden;
+        z-index:8;
+        img{
+            width:90%;
+            height:100%;
+        }
+    }
 </style>

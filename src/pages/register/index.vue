@@ -64,6 +64,9 @@
              console.log(obj);
             }
         },
+        mounted(){
+        this.type=Array.from([1,2,3])[~~(Math.random()*3)];
+        }
     }
 </script>
 <style lang="scss" scoped>
