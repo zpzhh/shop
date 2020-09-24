@@ -11,8 +11,8 @@
         <footer>
            <div class="pagination">
             <el-pagination
-            :page-size="20"
-            :pager-count="11"
+            :page-size="pagination.pageSize"
+            :pager-count="pagination.pagerCount"
             layout="prev,pager,next"
             :total="total"
             @current-change="change"
@@ -63,7 +63,6 @@
   div.itemList_outer_box{
       height:100%;
       width:100%;
-      margin-bottom: 150px;
       position:relative;
       header{
           img{
@@ -73,9 +72,7 @@
       }
        footer{
          div.pagination{
-                position:absolute;
-                right:0px;
-                bottom:0px;
+              float:right;
             &/deep/ ul.el-pager{
                 background-color: rgb(20,20,20);
                
@@ -89,7 +86,7 @@
        main{
            ul.list_main{
                width:100%;
-               height:450px;
+               min-height:450px;
                display:flex;
                justify-content:flex-start;
                flex-wrap:wrap;
@@ -98,7 +95,7 @@
                list-style:none;
                li{
                    width:24%;
-                   height:148px;
+                   height:256px;
                    border:#8e8e8e solid 2px;
                    margin:0 0 15px 3px;
                    padding-bottom:10px;

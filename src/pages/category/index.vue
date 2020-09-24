@@ -2,8 +2,8 @@
    <div class="box">
        <div class="list"  @click="focus">
            <p class="title">分类 Category</p>
-           <ul v-for="(items,idx1) in tabItems">
-                 <li v-for="(item,idx2) in items" >
+           <ul v-for="(items,idx1) in tabItems" :key="idx1">
+                 <li v-for="(item,idx2) in items" :key="idx2">
                     <router-link :to="item.path"  :data-position="`${idx1}-${idx2}`" :class="[link,navVal==item.value&&col==idx1?orange:white]" v-if="item.value.length==2">
                 {{item.value[0]}}<span class="two_font"></span>{{item.value[1]}}
                     </router-link>
@@ -17,7 +17,7 @@
            </ul>
         </div>
        <div class="display">
-           <router-view></router-view>
+           <router-view ></router-view>
        </div>
    </div>
 </template>
@@ -41,6 +41,7 @@
         }
     },
      methods:{
+          
           focus(e){  
            let tag=e.target.tagName.toLowerCase();
            if(tag=="a"){
@@ -74,6 +75,7 @@
               /*text的类型与tabItems的属性类型对应*/
             this.$EventBus.emit("jump",this.match(this.tabItems,text));
          })
+
      }
     }
 </script>
@@ -88,9 +90,10 @@
               box-sizing:border-box;
                height:100%;
                width:100%;
+               margin:0px 0px;
              div.list{
                  margin-top:0px;
-                 min-width:150px;
+                 min-width:200px;
                  min-height:200px;
                  background:url("../../../public/images/list_bg.jpg")  no-repeat  contain;
                  margin-right:3%;
@@ -154,7 +157,6 @@
                  display:flex;
                  align-items: center;
                  min-width:850px;
-                 min-height:100vh;
              }
          }
 </style>

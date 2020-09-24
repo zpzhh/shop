@@ -5,7 +5,7 @@
         >
             <swiper-slide  v-for="data in dataSet" :key="data.label">
                 <img  v-if="data.type=='img'"  :src="data.order"  alt="">
-                <video  v-else  controls="controls" autoplay :src="data.order"></video>
+                <video  v-else  controls="controls"  :src="data.order"></video>
             </swiper-slide>
             <div :class="['swiper-pagination','swiper-position']" slot="pagination"></div>
         </swiper>
@@ -88,16 +88,6 @@
             }
         },
         mounted(){
-             
-            this.$axios({
-                method:'get',
-                url:'http://127.0.0.1:3000/',
-                responseType:'blob',
-            }).then((msg)=>{
-             
-            }).catch((err)=>{
-                console.log(err);
-            })
          let div_trs= document.createElement('div');
             div_trs.className="transition_area";
             this.$SC=$("div.swiper-container");
@@ -128,8 +118,8 @@
 
 
   div.wrapper /deep/div.swiper-position{
-       top:250px;
-       right:40px;
+       top:calc(50%);
+       right:calc(6%);
   }
   div.wrapper /deep/div.swiper-slide>{
       background-color: #000;

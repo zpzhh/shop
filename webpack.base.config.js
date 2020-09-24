@@ -120,14 +120,14 @@ module.exports={
             cssProcessorOptions:{safe:true,discardComments:{removeAll:true}},
             canPrint:true
         }),
-        new purifyCss({
-            paths:glob.sync([
-                path.resolve(__dirname,"./*.html"),
-                path.resolve(__dirname,"./*.js")
-            ])
-        }),
+        // new purifyCss({
+        //     paths:glob.sync([
+        //         path.resolve(__dirname,"./*.html"),
+        //         path.resolve(__dirname,"./*.js")
+        //     ])
+        // }),
         new CommonsChunksPlugin({
-            name:["base","jquery","vue"],
+            name:[],
             minChunks:2
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),

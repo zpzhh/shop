@@ -223,18 +223,12 @@
         margin:0px 5px;
      }
 
-     div.userInto{
-       height:$h;
-       padding-left:20px;
-       width:150px;
-       line-height:$h;
-       white-space: nowrap;
-     }
+    
 </style>
 <style>
  .inputBgNone input.el-input__inner{
     background:none;
-    width:150px;
+    width:190px;
     height:32px;
     margin-bottom:0px;
     border-radius:3px;

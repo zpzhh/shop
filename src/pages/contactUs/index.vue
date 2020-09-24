@@ -56,6 +56,7 @@
               this.curLabel=state;
               this.curComponent=state;
          })
+         
         },
         methods:{
           toggle(e){
@@ -109,7 +110,6 @@
     }
     div.display{
         width:70%;
-        overflow: hidden;
     }
    
 </style>

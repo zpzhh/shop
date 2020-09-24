@@ -1,7 +1,7 @@
 <template>
       <div class="_box" @click="emitState">
            <span v-for="[key,value] in infos" :key="key">
-                 <router-link to='contactUs' class="font"
+                 <router-link to='/contactUs' class="font"
                    :data-state="key"
                  >{{value}}</router-link>
            </span>
@@ -32,7 +32,7 @@
              display: flex;
              height:60px;
              width:100%;
-             background:#1b1b1b;
+             background:transparent;
              justify-content: center;
              align-items: center;
              margin:0px 0px;

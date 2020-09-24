@@ -13,8 +13,6 @@ const config=merge(base,{
     
     entry:{
         main:path.join(__dirname,'./index.js'),
-        jquery:["jquery"],
-        vue:["vue"],
     }, 
     resolve:{
         extensions:[".js",".vue",".jsx",".json"],
